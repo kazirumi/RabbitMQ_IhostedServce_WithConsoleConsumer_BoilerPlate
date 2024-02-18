@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "CKQe9pyX9NIqwnSqFwoYpkkJwSphuztfeMneLixwJAc=",
+  "Source": "RabbitMQandIHostedService",
+  "BasePath": "_content/RabbitMQandIHostedService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

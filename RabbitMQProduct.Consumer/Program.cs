@@ -12,6 +12,7 @@ using RabbitMQandIHostedService.Services;
 using Serilog;
 using System.Text;
 
+//Basic setup for using appsettings.json and serilog
 
 var builder = new ConfigurationBuilder();
 builder.SetBasePath(Directory.GetCurrentDirectory())
@@ -22,8 +23,12 @@ Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Build())
                                         .WriteTo.Console()
                                         .CreateLogger();
 
+IConfiguration configuration = builder.Build();
+
+
 Log.Logger.Information("Application Product Consumer Starting ");
 
+// This portion make a separate dependency injection for console
 var host = Host.CreateDefaultBuilder()
         .ConfigureServices((context, services) =>
         {
@@ -32,11 +37,11 @@ var host = Host.CreateDefaultBuilder()
         })
         .UseSerilog()
         .Build();
+
 var productService = ActivatorUtilities.CreateInstance<ProductService>(host.Services);
 
-IConfiguration configuration = builder.Build();
 
-
+//Consumer Code Added here
 
 var factory = new ConnectionFactory
 {
@@ -64,18 +69,10 @@ channel.BasicConsume("product", autoAck: true, consumer: consumer);
 Console.ReadKey();
 
 
+//Consumer Actions defined here
 async Task<bool> SaveProduct(List<Product> products,IConfiguration configuration)
 {
-    //var services = new ServiceCollection();
-    //services.AddScoped<IProductService, ProductService>();
-    //services.AddDbContext<DBContextClass>();
-
-    //var  provider = services.BuildServiceProvider();
-
-    //var ProductService = provider.GetRequiredService<IProductService>();
-
-    
-    
+        
 
     //using (var context =new DBContextClass(configuration))
     //{

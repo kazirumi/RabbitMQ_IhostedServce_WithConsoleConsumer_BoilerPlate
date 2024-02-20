@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RabbitMQandIHostedService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14162d898596fe16c24a5cd8d96d626c2bbbf874")]
 [assembly: System.Reflection.AssemblyProductAttribute("RabbitMQandIHostedService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RabbitMQandIHostedService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
